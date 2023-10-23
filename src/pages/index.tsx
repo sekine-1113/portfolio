@@ -8,7 +8,7 @@ export default function Home() {
     if (Number(now.getMonth() + 1 >= birthDay.getMonth() + 1 && now.getDate() >= birthDay.getDate())) {
         nextBirthDay.setFullYear(now.getFullYear() + 1);
     }
-    nextBirthDay.setMonth(11);
+    nextBirthDay.setMonth(10);
     nextBirthDay.setDate(13);
     const nextBirthDayAtText = `次の誕生日まであと${Math.floor(Math.floor(nextBirthDay.getTime() - now.getTime()) / 86400000)}日！`;
     const currentAge = now.getFullYear() - birthDay.getFullYear() - 1 + Number(now.getMonth() + 1 >= birthDay.getMonth() + 1 && now.getDate() >= birthDay.getDate());
