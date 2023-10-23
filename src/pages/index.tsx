@@ -1,35 +1,27 @@
-import Header from "@/components/base/Header/Header";
+import useSwr from 'swr'
 
+import Header from "@/components/base/Header/Header";
+import { ProfileResponse } from "./interface/profile";
+
+
+const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
 export default function Home() {
-    const birthDay = new Date("2001-11-13");
-    const now = new Date();
-    const isBirthDay = now.getMonth() + 1 === birthDay.getMonth() + 1 && now.getDate() === birthDay.getDate();
-    const nextBirthDay = new Date();
-    if (Number(now.getMonth() + 1 >= birthDay.getMonth() + 1 && now.getDate() >= birthDay.getDate())) {
-        nextBirthDay.setFullYear(now.getFullYear() + 1);
-    }
-    nextBirthDay.setMonth(10);
-    nextBirthDay.setDate(13);
-    const currentAge = now.getFullYear() - birthDay.getFullYear() - 1 + Number(now.getMonth() + 1 >= birthDay.getMonth() + 1 && now.getDate() >= birthDay.getDate());
-    const birthDayText = birthDay.toLocaleString("ja-JP").split(" ")[0];
-    const isBirthDayText = isBirthDay
-        ? "今日が誕生日です！！"
-        : `次の誕生日まであと${Math.floor(Math.floor(nextBirthDay.getTime() - now.getTime()) / 86400000)}日！`;
+    const { data, error, isLoading } = useSwr<ProfileResponse>('/api/profile', fetcher)
+
+    if (error) return <div>Failed to load profile</div>
+    if (isLoading) return <div>Loading...</div>
+    if (!data) return null
+
     return (
         <>
             <Header title="アリスのウェブページ" />
             <div>
                 <h1>アリスのウェブページ</h1>
                 <h2>プロフィール</h2>
-                <div>名前：アリス</div>
-                <div>性別：男</div>
-                <div>職業：大学生・Webエンジニア</div>
-                <div>年齢：{currentAge}</div>
-                <div>誕生日：{birthDayText} {isBirthDayText}</div>
-                <div>出身地：福島県</div>
-                <div>趣味：読書、散歩、ジョギング、お出かけ、カラオケ、ボウリング、プログラミング</div>
-                <div>好きなタイプ：僕を好きでいてくれる人</div>
+                {data.datas.map((it) => (
+                    <div key={it.itemName}>{it.itemName} ー {it.item}</div>
+                ))}
             </div>
         </>
     );
