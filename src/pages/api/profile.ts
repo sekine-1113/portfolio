@@ -11,13 +11,13 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
         nextBirthDay.setFullYear(now.getFullYear() + 1);
     }
     nextBirthDay.setMonth(10);
-    nextBirthDay.setDate(13);
+    nextBirthDay.setUTCDate(13);
+    nextBirthDay.setUTCHours(0, 0, 0, 0);
     const currentAge = now.getFullYear() - birthDay.getFullYear() - 1 + Number(now.getMonth() + 1 >= birthDay.getMonth() + 1 && now.getDate() >= birthDay.getDate());
     const birthDayText = birthDay.toLocaleString("ja-JP").split(" ")[0];
     const isBirthDayText = isBirthDay
         ? "今日が誕生日です！！"
         : `あと${Math.floor(Math.floor(nextBirthDay.getTime() - now.getTime()) / 86400000)}日！`;
-
     const profile = {
         datas: [
             {itemName: "名前", item: "アリス"},
