@@ -8,7 +8,7 @@ import { ProfileResponse } from "./interface/profile";
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
 export default function Home() {
-    const { data, error, isLoading } = useSwr<ProfileResponse>('/api/profile', fetcher)
+    const { data, error, isLoading } = useSwr<ProfileResponse>('/api/v1/profile', fetcher)
 
     if (error) return <div>Failed to load profile</div>
     if (isLoading) return <div>Loading...</div>
