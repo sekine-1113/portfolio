@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { Profile, ProfileResponse } from '../interface/profile';
+import { Profile, ProfileResponse } from '../../interface/profile';
 
 
 const handler = (req: NextApiRequest, res: NextApiResponse) => {
