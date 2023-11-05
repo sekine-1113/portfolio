@@ -28,7 +28,7 @@ export default function Home() {
                     <div className=''>
                         {data.datas.map((it) => (
                             <div key={it.itemName} className='text-lg bg-rose-100 rounded-lg m-2 p-3'>
-                                <div className='underline underline-offset-2 indent-2'>{it.itemName}</div>
+                                <div className='underline underline-offset-2 decoration-dashed indent-2'>{it.itemName}</div>
                                 <div className='text-center'>{it.item}</div>
                             </div>
                         ))}
