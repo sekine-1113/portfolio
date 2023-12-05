@@ -24,9 +24,6 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
             {itemName: "ばーすでー", item: birthDate.toLocaleString("ja-JP").split(" ")[0]},
             {itemName: "ねくすとばーすでー", item: nextBirthDateText},
             {itemName: "うまれ", item: "ふくしまけん"},
-            {itemName: "すきなこと", item: "いろいろ"},
-            {itemName: "すきなひと", item: "すきになったひと"},
-
         ] as Profile[]
     } as ProfileResponse;
     res.status(200).json(profile)
