@@ -17,13 +17,14 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
         ? "はっぴーばーすでぃ！"
         : `あと${nextBirthDays}にち！`
     const profile = {
-        datas: [
+        items: [
             {itemName: "なまえ", item: "アリス"},
             {itemName: "せいべつ", item: "おとこのこ"},
             {itemName: "ねんれい", item: currentAge},
             {itemName: "ばーすでー", item: birthDate.toLocaleString("ja-JP").split(" ")[0]},
             {itemName: "ねくすとばーすでー", item: nextBirthDateText},
             {itemName: "うまれ", item: "ふくしまけん"},
+            {itemName: "くわしく", item: "./profile", isLink: true},
         ] as Profile[]
     } as ProfileResponse;
     res.status(200).json(profile)

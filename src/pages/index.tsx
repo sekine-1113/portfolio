@@ -16,20 +16,20 @@ export default function Home() {
     if (isLoading) return <div>Loading...</div>
     if (!data) return null
 
-    const classNames = `mx-auto ${fontStyle.className}`;
+    const classNames = `mx-auto w-1/2 ${fontStyle.className}`;
 
     return (
-        <div className='container font-mono max-w-screen flex mx-auto bg-blue-50'>
+        <div className='container font-mono max-w-screen flex mx-auto bg-blue-50 mb-10'>
             <Header title="アリスのウェブページ" />
             <body className={classNames}>
                 <div>
                     <h1 className='text-3xl text-start m-4 font-bold'>アリスのウェブページ</h1>
                     <h2 className='text-2xl text-center m-4 font-bold'>プロフィール</h2>
                     <div className=''>
-                        {data.datas.map((it) => (
+                        {data.items.map((it) => (
                             <div key={it.itemName} className='text-lg bg-rose-100 rounded-lg m-2 p-3'>
                                 <div className='underline underline-offset-2 decoration-dashed indent-2'>{it.itemName}</div>
-                                <div className='text-center'>{it.item}</div>
+                                <div className='text-center'>{!!it.isLink ? <a href={String(it.item)}>しょうさいページへ</a> : it.item}</div>
                             </div>
                         ))}
                     </div>
