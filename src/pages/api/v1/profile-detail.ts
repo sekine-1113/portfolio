@@ -10,7 +10,7 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
     const profile = {
         items: [
             {itemName: "なまえ", item: "アリス"},
-            {itemName: "せいべつ", item: "おとこのこ"},
+            {itemName: "せいべつ", item: "おとこ"},
             {itemName: "ねんれい", item: currentAge},
             {itemName: "うまれ", item: "ふくしまけん"},
             {itemName: "しんちょう", item: "167cmぐらい"},
