@@ -17,7 +17,7 @@ export default function Profile() {
     if (isLoading) return <div>Loading...</div>
     if (!data) return null
 
-    const classNames = `mx-auto w-1/2 ${fontStyle.className}`;
+    const classNames = `mx-auto w-fit ${fontStyle.className}`;
 
     return (
         <div className='container font-mono max-w-screen flex mx-auto bg-blue-50 mb-10'>
@@ -25,7 +25,7 @@ export default function Profile() {
             <body className={classNames}>
                 <div>
                     <h1 className='text-3xl text-start m-4 font-bold'>アリスのウェブページ</h1>
-                    <h2 className='text-2xl text-center m-4 font-bold'>プロフィール2</h2>
+                    <h2 className='text-2xl text-center m-4 font-bold'>しょうさいプロフィール</h2>
                     <div className=''>
                         {data.items.map((it) => (
                             <div key={it.itemName} className='text-lg bg-rose-100 rounded-lg m-2 p-3'>

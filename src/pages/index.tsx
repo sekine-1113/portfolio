@@ -16,7 +16,7 @@ export default function Home() {
     if (isLoading) return <div>Loading...</div>
     if (!data) return null
 
-    const classNames = `mx-auto w-1/2 ${fontStyle.className}`;
+    const classNames = `mx-auto w-max ${fontStyle.className}`;
 
     return (
         <div className='container font-mono max-w-screen flex mx-auto bg-blue-50 mb-10'>

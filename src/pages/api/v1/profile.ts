@@ -19,7 +19,7 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
     const profile = {
         items: [
             {itemName: "なまえ", item: "アリス"},
-            {itemName: "せいべつ", item: "おとこのこ"},
+            {itemName: "せいべつ", item: "おとこ"},
             {itemName: "ねんれい", item: currentAge},
             {itemName: "ばーすでー", item: birthDate.toLocaleString("ja-JP").split(" ")[0]},
             {itemName: "ねくすとばーすでー", item: nextBirthDateText},
