@@ -13,6 +13,14 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      fontFamily: {
+        sans: ['"Noto Sans JP"', 'sans-serif'],
+      },
+      colors: {
+        'soft-pink': '#ffe4e6',
+        'pink': '#ff69b4',
+        'pink-dark': '#ff1493',
+      },
     },
   },
   plugins: [],
