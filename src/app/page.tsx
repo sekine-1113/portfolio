@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 export default function Home() {
     return (
@@ -9,6 +10,7 @@ export default function Home() {
             <section id="about" className="mt-8 p-6 bg-white rounded-lg shadow-lg max-w-2xl w-full">
                 <h2 className="text-2xl font-bold text-pink mb-4">自己紹介</h2>
                 <p className="text-pink-dark">Webエンジニア（主にバックエンド）です。</p>
+                <p className="text-right"><Link href="./about">続きを見る</Link></p>
             </section>
 
             <section id="skills" className="mt-8 p-6 bg-white rounded-lg shadow-lg max-w-2xl w-full">
@@ -21,6 +23,7 @@ export default function Home() {
                     <li>MySQL</li>
                     <li>Kotlin</li>
                 </ul>
+                <p className="text-right"><Link href="./">続きを見る</Link></p>
             </section>
 
             <section id="projects" className="mt-8 p-6 bg-white rounded-lg shadow-lg max-w-2xl w-full">
@@ -35,11 +38,12 @@ export default function Home() {
                         <p>プロジェクト2の説明。</p>
                     </div>
                 </div>
+                <p className="text-right"><Link href="./">続きを見る</Link></p>
             </section>
 
             <section id="contact" className="mt-8 p-6 bg-white rounded-lg shadow-lg max-w-2xl w-full mb-8">
                 <h2 className="text-2xl font-bold text-pink mb-4">お問い合わせ</h2>
-                こちらまで <a href="https://x.com/_alice_chang_" target="_blank">X（旧Twitter）</a>
+                こちらまで <Link href="https://x.com/_alice_chang_" target="_blank">X（旧Twitter）</Link>
             </section>
         </div>
     )
